@@ -39,6 +39,9 @@ jspm_packages/
 # DB info files
 adminRouter.js
 sessionsRouter.js
+authRouter.js
+
+local.strategy.js
 
 # TypeScript v1 declaration files
 typings/
