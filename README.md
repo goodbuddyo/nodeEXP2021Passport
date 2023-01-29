@@ -1,8 +1,9 @@
-# nodeExp2021Mongo
+# nodeExp2021Passport
 
 
 Note: Clone of nodeExp2021Mongo returned no /src/routers folder
-If this folder and node_modules are added a clone will work
+If this folder and node_modules are added npm start will work 
+
 
 ------------
 
