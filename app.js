@@ -3,7 +3,6 @@ const chalk = require('chalk');
 const debug = require('debug')('app');
 const morgan = require('morgan');
 const path = require('path');
-
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
@@ -24,8 +23,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: { secure: true }
-}))
-// see https://www.npmjs.com/package/express-session
+}));
 
 require('./src/config/passport.js')(app);
 

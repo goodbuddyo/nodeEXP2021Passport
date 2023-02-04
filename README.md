@@ -37,8 +37,22 @@ and
 mongodb+srv://<username>:<password>@<clustername>...
 (find notes for Globomantics)
 
+Remember to update app.js to address deprication warning
+app.use(session({ secret: 'globomantics' }));
+to
+app.use(session({
+  secret: 'globomantics',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
 
+In local.strategy.js adminRouter.js authRouter.js updated MongoClient params to address warnings
+            try {
+              client = await MongoClient.connect(url);
 
+            try {
+              client = await MongoClient.connect(url, { useUnifiedTopology: true });
 ---------
 
 

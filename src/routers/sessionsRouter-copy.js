@@ -13,7 +13,8 @@ const { MongoClient, ObjectID } = require('mongodb');
 const sessions = require('../data/sessions.json');
 
 const sessionsRouter = express.Router();
-
+// update client to 
+// client = await MongoClient.connect(url, { useUnifiedTopology: true });
 sessionsRouter.route('/').get((req, res) => {
   const url =
     'mongodb+srv://dbUser:1R7jzwoc2WuKOK4U@globomantics.o6s8j.mongodb.net?retryWrites=true&w=majority';
@@ -22,7 +23,7 @@ sessionsRouter.route('/').get((req, res) => {
   (async function mongo() {
     let client;
     try {
-      client = await MongoClient.connect(url);
+      client = await MongoClient.connect(url, { useUnifiedTopology: true });
       debug('Connected to the mongo DB');
 
       const db = client.db(dbName);
@@ -46,7 +47,7 @@ sessionsRouter.route('/:id').get((req, res) => {
   (async function mongo() {
     let client;
     try {
-      client = await MongoClient.connect(url);
+      client = await MongoClient.connect(url, { useUnifiedTopology: true });
       debug('Connected to the mongo DB');
 
       const db = client.db(dbName);

@@ -23,7 +23,7 @@ adminRouter.route('/').get((req, res) => {
   (async function mongo() {
     let client;
     try {
-      client = await MongoClient.connect(url);
+      client = await MongoClient.connect(url, { useUnifiedTopology: true });
       debug('Connected to the mongo DB');
 
       const db = client.db(dbName);
