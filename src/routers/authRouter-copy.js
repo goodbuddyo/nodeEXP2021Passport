@@ -4,8 +4,6 @@ const { MongoClient, ObjectID } = require('mongodb');
 const passport = require('passport');
 
 const authRouter = express.Router();
-// update client to 
-// client = await MongoClient.connect(url, { useUnifiedTopology: true });
 authRouter.route('/signUp').post((req, res) => {
   const { username, password } = req.body;
   const url =

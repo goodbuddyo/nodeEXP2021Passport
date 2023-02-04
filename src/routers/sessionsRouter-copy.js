@@ -13,8 +13,6 @@ const { MongoClient, ObjectID } = require('mongodb');
 const sessions = require('../data/sessions.json');
 
 const sessionsRouter = express.Router();
-// update client to 
-// client = await MongoClient.connect(url, { useUnifiedTopology: true });
 sessionsRouter.route('/').get((req, res) => {
   const url =
     'mongodb+srv://dbUser:1R7jzwoc2WuKOK4U@globomantics.o6s8j.mongodb.net?retryWrites=true&w=majority';
