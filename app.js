@@ -18,12 +18,7 @@ app.use(express.static(path.join(__dirname, '/public/')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(session({
-  secret: 'globomantics',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}));
+app.use(session({ secret: 'globomantics' }));
 
 require('./src/config/passport.js')(app);
 

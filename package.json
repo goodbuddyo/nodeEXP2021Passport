@@ -8,27 +8,20 @@
     "debug": "DEBUG=* nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/goodbuddyo/nodeExp2021Mongo.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/goodbuddyo/nodeExp2021Mongo/issues"
-  },
   "dependencies": {
     "chalk": "4.1.1",
-    "cookie-parser": "^1.4.6",
+    "cookie-parser": "1.4.5",
     "debug": "4.3.1",
-    "ejs": "^3.1.8",
-    "express": "4.18.2",
-    "express-session": "^1.17.3",
+    "ejs": "3.1.6",
+    "express": "4.17.1",
+    "express-session": "1.17.1",
     "mongodb": "3.6.6",
     "morgan": "1.10.0",
     "nodemon": "2.0.7",
-    "passport": "^0.6.0",
-    "passport-local": "^1.0.0"
+    "passport": "0.4.1",
+    "passport-local": "1.0.0"
   },
   "nodemonConfig": {
     "restartable": "rs",

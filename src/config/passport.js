@@ -8,6 +8,7 @@ module.exports = function passportConfig(app) {
   passport.serializeUser((user, done) => {
     done(null, user);
   });
+
   passport.deserializeUser((user, done) => {
     done(null, user);
   });
