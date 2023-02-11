@@ -43,6 +43,8 @@ In local.strategy.js adminRouter.js authRouter.js updated MongoClient params to 
 
     try {
       client = await MongoClient.connect(url, { useUnifiedTopology: true });
+
+added  autocomplete="username" autocomplete="current-password" to form to address browser warnings
 -----------------
 Jim Lynch post in PS discussions a year ago:
 In Lesson 8: Creating a User: - authRouter.js
@@ -58,7 +60,61 @@ res.redirect('/auth/profile');
 
 credit:  https://stackoverflow.com/questions/68555397/return-inserted-document-in-mongodb-node-js
 
-// We are using "mongodb": "3.6.6", 
+// We are using "mongodb": "3.6.6", although atlas may use 4.x
+
+----------
+NOTE!!
+/services/speakerService.js references 
+        .get('http://localhost:3000/speakers/' + id)
+         to call API that references json file.
+Would need to update url on prod, and if need pwd, add to gitignore
+
+-----------
+
+app works with original code from lesson, however
+11 vulnerabilities (5 moderate, 5 high, 1 critical)
+Concerned about undifined error experienced during build that was fixed 
+by returning to original package.json
+
+ejs  <3.1.7
+Severity: critical
+ejs template injection vulnerability - https://github.com/advisories/GHSA-phwq-j96m-2c2q
+fix available via `npm audit fix --force`
+Install ejs@3.1.8, removed critical issue, app still works
+
+npm install ejs@3.1.8
+10 vulnerabilities (5 moderate, 5 high)
+
+for high vulnerabilities, need to upgrade
+"express": "4.17.1",
+to
+"express": "4.18.2",
+
+this may also upgrade "express-session": "1.17.1", which may be a problem
+this should also address
+"qs": "6.7.0", 
+and
+ "body-parser": "1.19.0",
+ both are in package-lock
+body-parser  1.19.0 no longer used in express 4.16+
+
+this install removed high issues, app still works
+7 vulnerabilities (5 moderate, 2 high)
+
+upgrade
+"nodemon": "2.0.7",
+to 
+"nodemon": "2.0.20",
+
+this install removed high issues, app still works
+1 moderate severity vulnerability
+
+
+
+
+
+
+
 
 
 
