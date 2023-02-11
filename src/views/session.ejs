@@ -1,7 +1,12 @@
 <html>
-  <body>
-    <%=session.title%> <br>
-    <%=session.speakers[0].name%> <br>
-    <%=session.description%><br>
-  </body>
+
+<body>
+  <%=session.title%> <br><br>
+    <%=session.speaker.name%> <br><br>
+
+      Speaker Bio: <%=session.speaker.bio%> <br><br>
+
+        <%=session.description%><br><br>
+</body>
+
 </html>
